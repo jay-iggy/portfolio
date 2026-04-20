@@ -24,8 +24,8 @@
   box-shadow: 7px 7px var(--darkblue);
   margin-right: 20px;
 
-  height: 300px;
-  width: 200px;
+  height: fit-content;
+  width: 250px;
 }
 .project-container:hover{
   background-color: var(--medblue);
