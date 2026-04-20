@@ -1,0 +1,41 @@
+﻿:root{
+  --rolebkg:#ff0076;
+  --enginebkg:#ed9d42;
+  --languagebkg:#1dde67;
+  --marketbkg:#e433ff;
+  --publishertag:#575fff;
+  /* -------------------- */
+}
+
+.tag-container {
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: flex-start;
+}
+.tag {
+  height:auto;
+  width:fit-content;
+  font-size:15px;
+
+  padding:5px 8px;
+
+  margin:5px;
+
+  border-radius:5px;
+  color:white;
+}
+.role-tag {
+  background-color:var(--rolebkg);
+}
+.engine-tag {
+  background-color:var(--enginebkg);
+}
+.language-tag {
+  background-color:var(--languagebkg);
+}
+.market-tag {
+  background-color:var(--marketbkg);
+}
+.publisher-tag {
+  background-color:var(--publishertag);
+}

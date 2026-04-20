@@ -60,38 +60,6 @@ body {
   flex-direction: column;
 }
 
-.projects {
-  display: flex;
-  flex-direction: row;
-}
-
-.project-container {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--brightblue);
-  border-radius: 10px;
-  box-shadow: 7px 7px var(--darkblue);
-  margin-right: 20px;
-
-  height: 300px;
-  width: 200px;
-}
-
-.project-text-container{
-  margin: 10px;
-}
-
-.project-title {
-  font-family: "Sora", sans-serif;
-  font-weight: bold;
-}
-
-.thumbnail{
-  border-radius: 10%;
-  height: 280px;
-  width: 200px;
-  justify-content: center;
-}
 
 
 
