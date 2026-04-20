@@ -28,12 +28,16 @@
   width: 250px;
 }
 .project-container:hover{
-  background-color: var(--medblue);
+  background-color: #242875;
   scale: 1.025;
 }
 
 .project-text-container{
   margin-bottom: 10px;
+}
+.project-text-container > p {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .project-title {
@@ -56,6 +60,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 10px;
 }
 
 button.project-link  {
@@ -68,7 +73,7 @@ button.project-link  {
   border-bottom: 2px solid darkslategray;
   margin: 0;
   width: 100%;
-  box-shadow: 7px 7px var(--darkblue);
+  box-shadow: 3px 3px var(--darkblue);
 }
 button.project-link:hover{
   background-color: darkslategray;
