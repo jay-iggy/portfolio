@@ -17,14 +17,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
 :root{
   /*COLOR PALETTE*/
-  --darkblue: #161237;
+  --darkblue: #0d0826;
   --medblue: #171038;
   --linkcolor:#ff0076;
   --babyblue:#abb2ce;
+  --brightblue:#241d5e;
   /* -------------------- */
 
-  background-color: var(--darkblue);
-  text-align: center;
+  background-color: var(--medblue);
   font-family: "Maven Pro", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -42,6 +42,65 @@
   font-weight: 400;
   font-style: normal;
 }
+
+button  {
+  font-family: "Maven Pro", sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: var(--linkcolor);
+  padding: 10px;
+  border: 2px transparent;
+  border-radius: 5px;
+  margin: 5px;
+  width: 8rem;
+}
+
+.centered-div{
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--brightblue);
+  border-radius: 10px;
+  box-shadow: 7px 7px var(--darkblue);
+
+  height: 300px;
+  width: 200px;
+}
+
+.project-text-container{
+  margin: 10px;
+}
+
+.project-title {
+  font-family: "Sora", sans-serif;
+  font-weight: bold;
+}
+
+.thumbnail{
+  border-radius: 10%;
+  height: 280px;
+  width: 200px;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+
 
 
 html {
