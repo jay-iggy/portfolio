@@ -55,16 +55,14 @@ button  {
   width: 8rem;
 }
 
-.centered-div{
-  height:100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 body {
   display: flex;
   flex-direction: column;
+}
+
+.projects {
+  display: flex;
+  flex-direction: row;
 }
 
 .project-container {
@@ -73,6 +71,7 @@ body {
   background-color: var(--brightblue);
   border-radius: 10px;
   box-shadow: 7px 7px var(--darkblue);
+  margin-right: 20px;
 
   height: 300px;
   width: 200px;
