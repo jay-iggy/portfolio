@@ -11,8 +11,41 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spinnaker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+:root{
+  /*COLOR PALETTE*/
+  --darkblue: #161237;
+  --medblue: #171038;
+  --linkcolor:#ff0076;
+  --babyblue:#abb2ce;
+  /* -------------------- */
+
+  background-color: var(--darkblue);
+  text-align: center;
+  font-family: "Maven Pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.alt-font{
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.title-font{
+  font-family: "Spinnaker", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 html {
-  color: #222;
+  color: var(--babyblue);
   font-size: 1em;
   line-height: 1.4;
 }
