@@ -99,17 +99,18 @@
 button.project-link  {
   font-family: "Maven Pro", sans-serif;
   font-weight: bold;
-  color: #ffffff;
-  background-color: slategray;
+  color: var(--babyblue);
+  background-color: transparent;
+  border: 1px solid var(--babyblue);
   padding: 10px;
   border-radius: 0;
-  border-bottom: 2px solid darkslategray;
   margin: 0;
   width: 100%;
   box-shadow: 3px 3px var(--darkblue);
 }
 button.project-link:hover{
-  background-color: darkslategray;
+  background-color: var(--linkcolor);
+  color: white;
 }
 .button-container > :first-child > button {
   border-top-left-radius: 10px;
@@ -118,7 +119,6 @@ button.project-link:hover{
 .button-container > :last-child > button {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  border-bottom: transparent;
 }
 
 
