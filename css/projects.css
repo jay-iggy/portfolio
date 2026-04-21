@@ -30,7 +30,7 @@
   border-radius: 10px;
   box-shadow: 7px 7px var(--darkblue);
   margin:20px;
-  height: fit-content;
+  height: 500px;
   width: 300px;
 }
 .project-container:hover{
@@ -51,15 +51,38 @@
   font-weight: bold;
 }
 
-.thumbnail{
+.thumbnail-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%; /* Adjust as needed */
+  height: 100%;
+}
+.thumbnail-container:hover {
+  scale: 1.1;
+}
+
+.thumbnail, .thumbnail-video{
   border-radius: 10px;
   height: 100%;
   width: 100%;
   justify-content: center;
+  transition: opacity 0.5s ease;
+
+  top:0;
+  left:0;
+  object-fit: cover;
 }
-.thumbnail:hover{
-  scale: 1.1;
+
+.thumbnail-video{
+  position: absolute;
+  opacity: 0;
 }
+
+.thumbnail-container:hover .thumbnail-video{
+  opacity: 1;
+}
+
+
 
 
 .button-container {
