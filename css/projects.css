@@ -82,6 +82,10 @@
   opacity: 1;
 }
 
+.project-container:hover .thumbnail-video{
+  opacity: 1;
+}
+
 
 
 
