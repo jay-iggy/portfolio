@@ -33,6 +33,7 @@
   margin:20px;
   height: 500px;
   width: 300px;
+  transition: 0.1s ease;
 }
 .project-container:hover{
   background-color: #242875;
@@ -109,6 +110,8 @@ button.project-link  {
   margin: 0;
   width: 100%;
   box-shadow: 3px 3px var(--darkblue);
+
+  transition: background-color 0.4s ease;
 }
 button.project-link:hover{
   background-color: var(--linkcolor);
