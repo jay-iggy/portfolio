@@ -18,9 +18,10 @@
   width: fit-content;
   height: fit-content;
   padding: 2rem;
+
+  margin-top: 5rem;
   border-radius: 20px;
-  background-color: rgb(23 16 56 / 0.95);
-  backdrop-filter: blur(10px);
+  background-color: rgb(23 16 56);
 }
 
 .project-container {
@@ -122,17 +123,5 @@ button.project-link:hover{
   border-bottom-right-radius: 10px;
   border: 1px solid var(--babyblue);
 }
-
-
-
-.bkg-video{
-  position: absolute;
-  top:0;
-  right: 0;
-  bottom: 0;
-  z-index: -2;
-  filter: blur(15px);
-}
-
 
 
