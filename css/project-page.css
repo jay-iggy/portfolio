@@ -16,10 +16,11 @@
   flex-direction: column;
   justify-content: center;
   justify-self: center;
+  align-items: center;
 
   flex-wrap:wrap;
 
-  width: fit-content;
+  width: 60vw;
   height: fit-content;
   padding: 2rem;
 
@@ -38,7 +39,7 @@
 
 .bkg-image {
 
-  position:absolute;
+  position:fixed;
   top: 0;
   left: 0;
   z-index: -1;
@@ -52,4 +53,26 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 800px; /* Optional: limits max size */
+  aspect-ratio: 16 / 9;
+}
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.horizontal-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.horizontal-container img {
+  width: 250px;
+  height: 100%;
 }

@@ -37,8 +37,60 @@
     </div>
     <div class="container-fluid">
       <h1>SLEEPING WITH THE ROACHES</h1>
+      <h2>About</h2>
+      <p>Sleeping with the Roaches is a two-player 3D puzzle platformer where two bugs, tied together with a spider web, must work together to escape the leader of the spider mafia. A wide-eyed young spider and an unlucky moth are trapped in the cluttered basement of an Italian-American family, and must use the spider silk that connects them and their own unique abilities to reach freedom.</p>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/eueUamyKLWI?si=Yjyg3d8tqyk601q0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <iframe frameborder="0" src="https://itch.io/embed/2678438?bg_color=363170&amp;fg_color=eeeeee&amp;link_color=eb5f80&amp;border_color=363636" width="552" height="167"><a href="https://cu5tin.itch.io/sleeping-with-the-roaches">Sleeping with the Roaches by Jay Iggy, aegross, ComputerCow, Keenan, AwokenOwen, hayyyyyden</a></iframe>
+
+      <a href="https://stinkymilo.github.io/TeamWebsite/index.html#header05-1">
+        <button>Devlog Website</button>
+      </a>
+
+      <p>Art Team: Keenan Jones, Hayden Padula</p>
+      <p>Tech Team: Audrey Gross, Justin Ignatowski, Milo Jacobs, Owen Knizak</p>
+
+      <h2>My Role on the Project</h2>
+      <p>As part of the 6-person development team, my responsibilites included: programming player characters, designing/implementing User Interface, programming the dialogue system, writing dialogue, and level design.</p>
+      <p>I had the most previous experience with Unreal Engine, and as such, I helped the other members of the team through its quirks.</p>
+
       <h2 id="characters">Characters</h2>
+      <p>Our main gameplay mechanic is a rope that tethers the two players together. However, Unreal's Character Movement component was incompatible with our tether mechanic and we had to create our own movement system from scratch.</p>
+      <p>We also decided not to use Unreal's multiplayer options or implement controller support since one of the functions we relied on for our aiming system used the mouse position and we decided for both characters to be controlled on the same keyboard and mouse.</p>
+      <p>Despite being a game featuring two characters, both are controlled by a single keyboard and mouse. In Unreal, I was unable to get two different Pawns to be controlled by the same input device. The solution was to create a single pawn we called InputHub that acted as a middleman and passed along the inputs from the user to the two characters.</p>
+      <p>The characters would check every Tick for the most recent movement inputs, so it was easy enough to just create Get functions.
+        For the Jump and Shoot actions, which were not to be checked every Tick, we created Event Dispatchers on the InputHub which the characters would bind their relevant events to to be executed when the corresponding button was pressed.</p>
+      <p>Both characters use the same movement code, the key difference is that the GetMovementInput function is overridden by both character classes.</p>
+      <img src="../assets/roaches/bug-02.avif" alt=""/>
+      <p>When creating our own movement system we could not just apply velocity in the direction of the raw player input: we had to remap the movement direction according to the camera and slopes.To align the movement to the Camera, multiply the forward movement by the Camera object's forward vector and the horizontal movement by the Camera object's right vector (remember to ignore the vertical component of the vectors).To align the movement to slopes, send a Line Trace downward to find the Normal Vector of the slope, then use a Project Vector onto Plane function with the movement input and the Normal Vector. Remember to normalize the direction of the output from the projection function since the length is messed up by the function.</p>
+      <img src="../assets/roaches/bug-03.avif" alt=""/>
+      <p>Another aspect of the custom character controllers is to get the characters to rotate to face the direction they are moving.
+        The following code gets the target rotation that the character should be facing according to their velocity. </p>
+      <img src="../assets/roaches/bug-04.avif" alt=""/>
+      <p>Finally, this code (when called every Tick), smoothly rotates the character to face the direction of their movement.
+        (The Shortest Path feature of the Lerp function is a lifesaver that corrects some weird rotation related quirks.)</p>
+      <img src="../assets/roaches/bug-05.avif" alt=""/>
+
       <h2 id="dialogue">Dialogue System</h2>
+      <p>The core of the UI architecture is the Widget Stack class. This class is a User Widget that holds a list of other User Widgets and displays the last widget in the list on the screen.</p>
+      <p>The Push Widget function pushes the given User Widget to the top of the stack and displays it to the screen. The Pop Widget function deletes the widget at the top of the stack and displays whatever widget is now at the top of the stack.</p>
+      <p>The advantage of this system is the ability to create nested menus that know nothing about eachother. This makes the code for opening another submenu and backing out of a menu very simple, as well as allowing the same menus to be reused in different contexts.</p>
+      <img src="../assets/roaches/bug-01.avif" alt=""/>
+      <p>The dialogue system, also shown above, uses the Widget Stack as well.
+        Each line of dialogue is stored as a Struct that has a String and an Enum that tracks which character is speaking. A conversation is represented by a DataAsset that stores an array of dialogue lines.</p>
+      <p>To play a conversation, the DialogueManager's Play Dialogue Exchange event would be called with a given DialogueObject data asset. The DialogueManager pushes a Slot Widget to the Widget Stack, so it can change the content of the slot to the corresponding dialogue box of whichever character is talking.</p>
+      <p>Each dialogue line is displayed on the screen with a delay between each to allow the user to read comfortably. In order to get the delays to work, I also had to create a custom For Each Loop that would have a delay between each element. Fortunately, Unreal makes this very easy: the full functionality of the For Each Loop Macro is accessible to users and can be copied and modified for different use cases.</p>
+      <br>
+      <p>For a Dialogue system, I encourage using DataAssets as the data type for the dialogue conversations. DataAsset objects are stored in the games files and can be referenced from anywhere.</p>
+
+
+      <h2>Source Control</h2>
+      <p>We used a standard GitHub repository for source control.</p>
+      <p>We decided not the use Github LFS since our files were not very large and we heard it was difficult to use.</p>
+      <p>Unreal stores Blueprints as binary files so files could not be merged. As a result, the tech team had to communicate with each-other to ensure we were not working on the same files.</p>
+      <p>Early in development, we each worked on separate branches. However we would only merge our branches back into the primary branch when we were done working on a feature and for the entire time we were working on that feature other team members could not touch that file. Also, features were often dependent on lots of other features and by working on branches we often did not have access to the most up to date version of the other features. Later in development we all decided to work on the same branch since we would not be modifying the same files anyway. We also started to make much smaller commits. As a result, files became more available for edit more often and everyone had access the most up to date version of each feature at all tims.</p>
+      <p>When commiting level changes in Github Desktop, the files are unreadable strings of random characters, so it is impossible to tell what each file is. I found that using Unreal's Git integration had more information on each file and what changes were made.</p>
     </div>
   </div>
 </body>
