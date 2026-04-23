@@ -57,6 +57,7 @@
 
 .video-container {
   width: 100%;
+  height:100%;
   max-width: 800px; /* Optional: limits max size */
   aspect-ratio: 16 / 9;
 }
@@ -65,14 +66,14 @@
   height: 100%;
 }
 
-.horizontal-container {
+.store-link-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
-.horizontal-container img {
+.store-link-container img {
   width: 250px;
   height: 100%;
 }
