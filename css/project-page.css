@@ -43,6 +43,9 @@
   .container-fluid > p {
     text-align: left;
   }
+  .container-fluid {
+    width: 70vw;
+  }
 }
 
 .project-title-img {
