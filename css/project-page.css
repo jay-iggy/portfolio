@@ -45,6 +45,9 @@
   justify-content: center;
 }
 
+.container-fluid > iframe {
+  max-width: 100%;
+}
 
 
 .bkg-image {
@@ -93,5 +96,29 @@ a {
 .store-link-container img {
   height: 50px;
   width: 100%;
+}
+
+.horizontal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 30px;
+
+  width: 100%;
+}
+
+.horizontal > img {
+  max-width: 50%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+  gap: 10px;
+}
+.grid > img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
