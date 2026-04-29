@@ -18,13 +18,12 @@
   justify-self: center;
   align-items: center;
 
-  flex-wrap:wrap;
+  margin: 10px;
 
   width: 60vw;
   height: fit-content;
   padding: 2rem;
 
-  margin-top: 2rem;
   border-radius: 20px;
   background-color: rgb(23 16 56);
 }
@@ -36,6 +35,9 @@
   justify-content: center;
 }
 
+.container-fluid > img {
+  width: 100%;
+}
 
 .bkg-image {
 
