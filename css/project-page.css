@@ -27,6 +27,16 @@
   border-radius: 20px;
   background-color: rgb(23 16 56);
 }
+.container-fluid > img {
+  max-width: 100%;
+}
+.container-fluid > p{
+  text-align: center;
+
+  font-size: 105%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
 .project-title-img {
   width: 300px;
@@ -35,9 +45,7 @@
   justify-content: center;
 }
 
-.container-fluid > img {
-  width: 100%;
-}
+
 
 .bkg-image {
 
