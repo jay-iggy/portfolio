@@ -74,6 +74,8 @@ html {
   color: var(--babyblue);
   font-size: 1em;
   line-height: 1.4;
+
+  scroll-padding-top: 75px; /* Matches your header height */
 }
 
 /*
