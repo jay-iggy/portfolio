@@ -26,7 +26,7 @@
   padding: 2rem;
 
   border-radius: 20px;
-  background-color: rgb(23 16 56);
+  background-color: rgb(23 16 56 / 0.95);
 }
 .container-fluid > img {
   max-width: 100%;
