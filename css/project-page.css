@@ -41,9 +41,15 @@
 
 @media (max-width: 500px) {
   .container-fluid > p {
+    text-align: left;
   }
   .container-fluid {
     width: 70vw;
+  }
+  .wrapped-container > p{
+    margin-left: 25px;
+    margin-right: 40px;
+    text-align: left;
   }
 }
 
@@ -130,8 +136,8 @@ iframe {
 }
 .wrapped-container > p {
   padding-left: 1rem;
-  text-align: justify;
   font-size: 115%;
+
 }
 
 .wrapped-image {
