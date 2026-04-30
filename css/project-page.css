@@ -52,6 +52,7 @@
   height: 100%;
 
   justify-content: center;
+  border-radius: 15px;
 }
 
 .container-fluid > iframe {
@@ -86,10 +87,15 @@ a {
   height:100%;
   max-width: 800px; /* Optional: limits max size */
   aspect-ratio: 16 / 9;
+
 }
 .video-container iframe {
   width: 100%;
   height: 100%;
+
+}
+iframe {
+  border-radius: 20px;
 }
 
 .store-link-container {
